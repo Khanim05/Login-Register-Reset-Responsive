@@ -1,0 +1,119 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --text-color:#2e2b41;
+    --accent-color:#1c5c86;
+    --base-color:white;
+}
+a{
+    text-decoration: none;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 80px;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+.header{
+   font-family: "Barlow Condensed", sans-serif;
+   font-size: 30px;
+}
+.links{
+    gap: 40px;
+    display: flex;
+   
+}
+
+.links li a {
+    font-size: 15px;
+    color:var(--text-color);
+    font-family: Poppins , sans-serif;
+    transition: 150ms ease;
+    font-weight: 500;
+}
+.links a:hover{
+    color: var(--accent-color);
+}
+
+.wrapper{
+    display: flex;
+    gap: 10px;
+}
+.wrapper img{
+    cursor: pointer;
+}
+
+.dropdown{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.settings{
+    background-color:rgb(0, 0, 0);
+    width: 120px;
+    border-radius: 4px;
+    position: absolute;
+    top: 100%;
+    padding:10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+
+    transition: 
+        opacity 0.5s ease,
+        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.settings a{
+    color: var(--base-color);
+    transition: 150ms ease;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.settings a:hover{
+    border-bottom: 1px solid var(--base-color);
+    
+}
+.dropdown:hover .settings{
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+.wrapper .sidebar{
+    display: none;
+}
+
+@media  screen and (max-width:768px) {
+    .navbar{
+        padding: 40px;
+    }
+    .navList{
+        display: none;
+    }
+    .wrapper .sidebar{
+        display: block;
+    }
+}
+
+
+
+
+
+
+
